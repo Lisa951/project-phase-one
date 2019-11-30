@@ -1,0 +1,27 @@
+{
+  "name": "index.js",
+  "version": "1.0.0",
+  "description": "phase one",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.1",
+    "save": "^2.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon --inspect src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lisa951/project-phase-one.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lisa951/project-phase-one/issues"
+  },
+  "homepage": "https://github.com/Lisa951/project-phase-one#readme",
+  "keywords": []
+}
