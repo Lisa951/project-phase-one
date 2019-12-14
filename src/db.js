@@ -12,7 +12,7 @@ let writeFile = util.promisify(fs.writeFile);//use promises instead of callbacks
 
 // Declare where the DB path is relative from where our `package.json` is
 let dbPath = path.resolve('src/db.json');
-console.log(dbPath)
+console.log(dbPath);
 
 //read
 
@@ -34,16 +34,16 @@ async function read(){
 
 async function write(dbItems) {//what do we want to write in the file
   let json = JSON.stringify(dbItems, null, 2);// The parameters for `null` and `2` are so it's formatted with 2 spaces of indentation
-await writeFile(db.path,json);
+  await writeFile(db.path, json);
 }
 
 /**
  *
  */
 async function addNames(newName) {
-let allNames = await read();
-allNames.push(newName);
-await write(allNames);
+  let allNames = await read();
+  allNames.push(newName);
+  await write(allNames);
 }
 
 

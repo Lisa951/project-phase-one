@@ -10,20 +10,20 @@ let express = require('express');
 let db = require('./db');
 let router = express.Router();
 
-//create member
-router.get('/names', async function(req, res){
+//get a list of all submissions
+router.get('/create/allsubmissions', async function(req, res){
   await db.addName(req.body);
-  res.sendStatus(201);
+  res.sendStatus(201);//request has been fufilled
 });
-router.post('/names', async function(req, res) {
+router.post('/create/allsubmissions', async function(req, res) {
   await db.addName(req.body); //return promise
-  res.sendStatus(201);
+  res.sendStatus(201);//request has been fufilled
 });
 
 
 //form routes?
 
-router.get('/names', (req, res) => res.json(members));
+router.get('/create/allsubmissions', (req, res) => res.json(members));
 
 
 
