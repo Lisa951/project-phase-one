@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "firstName": "Lisa",
+    "lastName": "Alexander",
+    "email": "lisa05@rogers.com",
+    "phoneNumber": "123-456-7890"
+  }
+]

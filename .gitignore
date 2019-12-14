@@ -1,3 +1,4 @@
+# tells source control to ignore the files or file patterns listed
 .DS_Store
 node_modules
 /dist

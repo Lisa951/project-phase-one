@@ -24,7 +24,7 @@ app.post('/create/session', function(req, res){
   res.send('Create a Session');//3.
 });
 app.get('/create/submissions', function(req, res){
-  res.send('List of all submissions');
+  res.send('List of all submissions');//4
 });
 
 
