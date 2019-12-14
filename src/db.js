@@ -40,6 +40,7 @@ async function write(dbItems) {//what do we want to write in the file
 /**
  *
  */
+
 async function addNames(newName) {
   let allNames = await read();
   allNames.push(newName);
