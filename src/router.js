@@ -35,20 +35,21 @@ function validateContactFormMiddleware(req, res, next) {
   }
 }
 
-//post adding data
-router.post('/submit', validateContactFormMiddleware, async function(req, res, next){
+//create an entry when the user submits their form
+router.post('/submit', validateContactFormMiddleware, async function(req, res, next) {
   await db.addcontactInfo(req.body);
-  res.sendStatus(201);
-  next();//1. first route to create an entry when the user submits their form
+  res.sendStatus(201);//resource was created
+  next();
 });
-//register a user
-router.post('/register', function(req, res){
-  res.send('Register a user');//2. create or register a user
+//Register a user
+router.post('/register', function(req, res) {
+  res.send('register a new user'); //2. create or register a user
 });
-//log a registered user in
+//Log a registered user in
 router.post('/session', function(req, res){
   res.send('Create a Session');//3.
 });
+//Get a list of alll submission
 router.get('/allsubmissions', async function(req, res){
   res.send(await db.read());//4
 });
