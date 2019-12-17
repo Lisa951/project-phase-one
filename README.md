@@ -1,3 +1,3 @@
 # project-phase-one
 completed phase one,
-cinishing phase two
+continuing phase two
