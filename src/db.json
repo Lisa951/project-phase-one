@@ -4,5 +4,18 @@
     "lastName": "Alexander",
     "email": "lisa05@rogers.com",
     "phoneNumber": "123-456-7890"
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "name@rogers.com",
+    "phoneNumber": "321-654-987"
+  },
+  {
+    "firstName": "Jon",
+    "lastName": "Deer",
+    "email": "othername@rogers.com",
+    "phoneNumber": "111-111-1111"
   }
+
 ]

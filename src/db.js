@@ -1,6 +1,6 @@
 'use strict';
 //node.js
-//handles the JsON file, how we read and write data/different files
+//handles the JSON file, how we read and write data/different files
 let util = require('util');
 let fs = require('fs');
 let path = require('path');
@@ -26,7 +26,7 @@ async function read() {
 async function read(){
   return readFile(dbPath).then(function (fileContents){
     let json = JSON.parse(fileContents);
-    return json;
+    return allNames;
   });
 }
 */
@@ -40,7 +40,6 @@ async function write(dbItems) {//what do we want to write in the file
 /**
  *
  */
-
 async function addNames(newName) {
   let allNames = await read();
   allNames.push(newName);

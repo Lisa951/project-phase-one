@@ -19,12 +19,27 @@ let router = express.Router();
 //   await db.addName(req.body); //return promise
 //   res.sendStatus(201);//request has been fufilled
 // });
-router.get('/',function(req, res){
+/*router.get('/',function(req, res){
   res.send('Contact Form');//send something to the browser
-});
+});*/
+
+
+function validateContactFormMiddleware(req, res, next) {
+  let contactInfo = req.body;
+  if (!contactInfo.firstName) {
+    res.status(400).send('"firstName" is a required field');
+  } else if (!contactInfo.email) {
+    res.status(400).send('"email" is a required field');
+  } else {
+    next();
+  }
+}
+
 //post adding data
-router.post('/submit', function(req, res){
-  res.send('Create Submission');//1. first route to create an entry when the user submits their form
+router.post('/submit', validateContactFormMiddleware, async function(req, res, next){
+  await db.addcontactInfo(req.body);
+  res.sendStatus(201);
+  next();//1. first route to create an entry when the user submits their form
 });
 //register a user
 router.post('/register', function(req, res){
@@ -34,8 +49,8 @@ router.post('/register', function(req, res){
 router.post('/session', function(req, res){
   res.send('Create a Session');//3.
 });
-router.get('/allsubmissions', function(req, res){
-  res.send('List of all submissions');//4
+router.get('/allsubmissions', async function(req, res){
+  res.send(await db.read());//4
 });
 
 
