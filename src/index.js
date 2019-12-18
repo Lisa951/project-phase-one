@@ -10,10 +10,6 @@ let app = express();//initalize a vaiable called app with express
 app.use(express.json());// method returns a peice of middleware, to be used in the request process
 app.use(router);
 
-app.use(function (req, res, next){
-  console.log('TestForm');//example text
-  next();
-})
 
 //error handler
 
