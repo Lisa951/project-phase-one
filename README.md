@@ -1,2 +1,3 @@
 # project-phase-one
- phase one 
+completed phase one,
+continuing phase two
