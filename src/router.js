@@ -10,24 +10,13 @@ let express = require('express');
 let db = require('./db');
 let router = express.Router();
 
-//get a list of all submissions
-// router.get('/create/allsubmissions', async function(req, res){
-//   await db.addName(req.body);
-//   res.sendStatus(201);//request has been fufilled
-// });
-// router.post('/create/allsubmissions', async function(req, res) {
-//   await db.addName(req.body); //return promise
-//   res.sendStatus(201);//request has been fufilled
-// });
-/*router.get('/',function(req, res){
-  res.send('Contact Form');//send something to the browser
-});*/
+
 
 
 function validateContactFormMiddleware(req, res, next) {
   let contactInfo = req.body;
   if (!contactInfo.firstName) {
-    res.status(400).send('"firstName" is a required field');
+    res.status(400).send('"firstname" is a required field');
   } else if (!contactInfo.email) {
     res.status(400).send('"email" is a required field');
   } else {
@@ -41,14 +30,17 @@ router.post('/submit', validateContactFormMiddleware, async function(req, res, n
   res.sendStatus(201);//resource was created
   next();
 });
+
 //Register a user
 router.post('/register', function(req, res) {
   res.send('register a new user'); //2. create or register a user
 });
+
 //Log a registered user in
 router.post('/session', function(req, res){
   res.send('Create a Session');//3.
 });
+
 //Get a list of alll submission
 router.get('/allsubmissions', async function(req, res){
   res.send(await db.read());//4
