@@ -33,7 +33,7 @@ router.post('/submit', validateContactFormMiddleware, async function(req, res, n
 
 //Register a user
 router.post('/register', function(req, res) {
-  res.send('register a new user'); //2. create or register a user
+  res.sendStatus(201); //2. create or register a user
 });
 
 //Log a registered user in
