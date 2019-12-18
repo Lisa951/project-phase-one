@@ -4,6 +4,7 @@
   "description": "phase one , two, three",
   "main": "index.js",
   "dependencies": {
+    "argon2": "^0.25.1",
     "express": "^4.17.1",
     "nodemon": "^2.0.1"
   },
