@@ -16,6 +16,9 @@
     "lastName": "Deer",
     "email": "othername@rogers.com",
     "phoneNumber": "111-111-1111"
+  },
+  {
+    "firstName": "Tim",
+    "email": "anothername@rogers.com"
   }
-
 ]
