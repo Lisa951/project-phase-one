@@ -1,11 +1,5 @@
 'use strict';
-//define the routes being used
 
-//delete/sessions/id reuest? (sesion Termination - logging out)
-
-//Health-Check endpoint?
-
-//for a post request we need to have something allowing 'add something to the form'
 let express = require('express');
 let db = require('./db');
 let router = express.Router();
@@ -24,33 +18,30 @@ function validateContactFormMiddleware(req, res, next) {
   }
 }
 
-//create an entry when the user submits their form
-router.post('/submit', validateContactFormMiddleware, async function(req, res, next) {
+//1. create an entry when the user submits their form
+router.post('/submit/contact', validateContactFormMiddleware, async function(req, res, next) {
   await db.addcontactInfo(req.body);
-  res.sendStatus(201);//resource was created
+  res.sendStatus(201);
   next();
 });
 
-//Register a user
-router.post('/register', function(req, res) {
-  res.sendStatus(201); //2. create or register a user
+
+//2. Register a user
+router.post('/newuser', function(req, res) {
+  res.sendStatus(201);
 });
 
-//Log a registered user in
-router.post('/session', function(req, res){
-  res.send('Create a Session');//3.
+
+//3. Log a registered user in
+router.post('/login', function(req, res){
+  res.send('User Login');
 });
 
-//Get a list of alll submission
+
+//4. Get a list of all submission
 router.get('/allsubmissions', async function(req, res){
-  res.send(await db.read());//4
+  res.send(await db.read());
 });
-
-
-//form routes?
-
-// router.get('/create/allsubmissions', (req, res) => res.json(members));
-
 
 
 
