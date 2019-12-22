@@ -18,20 +18,12 @@ let dbPath = path.resolve('src/db.json');
 
 async function read() {
   let fileContents = await readFile(dbPath);//takes a file path and returns a promise
-  let allNames = JSON.parse(fileContents);
+  let allContactEntries= JSON.parse(fileContents);
   console.log(fileContents);
-  return allNames;
+  return allContactEntries;
 
 }
 
-/**
-async function read(){
-  return readFile(dbPath).then(function (fileContents){
-    let json = JSON.parse(fileContents);
-    return allNames;
-  });
-}
-*/
 
 
 async function write(dbItems) {//what do we want to write in the file
@@ -44,15 +36,15 @@ async function write(dbItems) {//what do we want to write in the file
  *
  */
 
- //for route 1 adding an item to the db
-async function addNames(newName) {
-  let allNames = await read();
-  allNames.push(newName);
-  await write(allNames);
+ //for route 1 - adding an item to the db
+async function addContactEntries(newContactEntry) {
+  let allContactEntries = await read();
+  allContactEntries.push(newContactEntry);
+  await write(allContactEntries);
 }
 
 
 module.exports = {
   read: read,
-  addcontactInfo: addNames, //the return value of reuire is the value of module dot exports its pointing at
+  addcontactInfo: addContactEntries, //the return value of require is the value of module.exports its pointing at
 };
