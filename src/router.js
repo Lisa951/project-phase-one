@@ -7,6 +7,7 @@ let router = express.Router();
 
 
 
+
 function validateContactFormMiddleware(req, res, next) {
   let contactInfo = req.body;
   if (!contactInfo.firstName) {
